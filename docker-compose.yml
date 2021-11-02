@@ -1,0 +1,17 @@
+version: '3.3'
+services:
+  ##Ereka server
+  eureka_server:
+    container_name: eureka_server
+    ports:
+      - 8761:8761
+    build:
+      context: .
+    networks:
+      configserver_p1_bootcamp:
+        ipv4_address: 172.20.0.4
+
+
+networks:
+  configserver_p1_bootcamp:
+    external: true
